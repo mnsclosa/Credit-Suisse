@@ -2,28 +2,29 @@
 //
 #include <iostream>
 
-double funcaoRetornaQuantidade( double porcentagem,int totalNegociado )
+/*
+* quantidadePOV: retorna a quantidade de ações a negociar quando uma determinada quantidade for negociada no mercado,
+*				 o exemplo é bem simples sem levar em consideração o preço limite para negociar.
+* 
+* porcentagem : Percentual a negociar quando o total negociado for atingido.
+* 
+* totalNegociado : total que será ultilizado para o calculo da quantiade
+* 
+* retorno: retorna o valor do calculo quando atingido o volume de negociação.
+* 
+*/
+
+double quantidadePOV( double porcentagem,int totalNegociado )
 {
-	int volumeEsperado = 1000;  // Volume total esperado no mercado
-
-	// Calcula o número total de ações que o cliente deve ter negociado até o final
-	porcentagem *= 10;
-	double acoesEsperadas = porcentagem * volumeEsperado;
-
-	// Calcula o número de ações que ainda precisam ser negociadas
-	double acoes_a_negociar = acoesEsperadas - ( totalNegociado * porcentagem );
-
-	return acoes_a_negociar;
+	return totalNegociado * porcentagem; /* quantidade de ações que serão negociadas quando o volume for atingido */
 }
 
 int main()
 {
-	double porcentagem = 0.1;  // 10% em formato decimal
-	int totalNegociado = 800;   // Total negociado no mercado
+	double porcentagem = 0.1;  /* 10% do valor em decimal para facilitar o calculo */
+	int VolumeNegociado = 1000;   /* volume negociado para o calculo do POV */
 
-	double acoes_a_negociar = funcaoRetornaQuantidade( porcentagem,totalNegociado );
-
-	std::cout << "Ações a negociar para atingir o volume esperado: " << acoes_a_negociar << std::endl;
+	std::cout << "Acoes a negociar quando atingir o volume esperado: " << quantidadePOV( porcentagem,VolumeNegociado ) << std::endl;
 
 	return 0;
 }

@@ -1,2 +1,4 @@
 ﻿  Pov.cpp
+C:\Users\Mauro\source\repos\Credit Suisse\Pov\Pov.cpp(21,21): warning C4244: 'inicializando': conversão de 'double' para 'int', possível perda de dados
+C:\Users\Mauro\source\repos\Credit Suisse\Pov\Pov.cpp(29,46): warning C4244: '+=': conversão de 'double' para 'int', possível perda de dados
   Pov.vcxproj -> C:\Users\Mauro\source\repos\Credit Suisse\Pov\x64\Debug\Pov.exe
